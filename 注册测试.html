@@ -48,6 +48,8 @@
 
             float:inherit;
             background-color: white;
+            border-radius: 15px;
+            border: 1px solid #CCC;
         }
        #img1{
            color:white ;
@@ -72,7 +74,7 @@
        }
     </style>
     <script>
-    var usernameRegex=/^[\u4e00-\u9fa5]{4}$/;
+    var usernameRegex=/^[A-Za-z0-9_\u554A-\u9C52]{1,10}$/;
     var passwordRegex=/^[a-zA-Z]\w{7}$/;
     var telRegex=/^\d{11}$/;
     var emailRegex = /^\w+@\w+(\.\w+)+$/;
@@ -203,7 +205,7 @@
     <div id="body">
     <form name="form1" method="post" onsubmit="return validateForm()"  action="">
         <br><br>
-    <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="4" name="username" id="username" onblur="check_username(this)">
+    <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)">
        <span class="glyphicon glyphicon-ok" id="img1"></span><span id="span_username">用户名为四个汉字</span><br><br>
 
     <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">
