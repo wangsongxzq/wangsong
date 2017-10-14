@@ -7,6 +7,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        function ById(id){  //自定义方法，用于获取传递过来的ID值对应的节点对象
+            return document.getElementsByid()
+        }
+        function change() {
+            this.display='block';
+        }
+        function cancel() {
+            this.display='none';
+        }
 
     </script>
 </head>
@@ -36,15 +45,71 @@
 
 
 <div class="insert">
+    <a href="#" style="font-size: larger; float: right;margin-top: 5px;color:black">更多<span class="glyphicon glyphicon-arrow-right" style=" font-size: 20px; color: green; margin-right:5px; "></span></a>
+</div>
+<div class="middle">
+    <div class="case-top"></div>
+
+    <div class="case" id="case1-1" onmouseover="change()" onmouseout="cancel()">
+        <div class="case_inside"> <img src="302993.jpg"></div>
+        <div class="case_text"><p>马鞭草还是鼠尾草</p></div>
+    </div>
+    <div class="case" id="case1-2" onmouseover="change()" onmouseout="cancel()">
+        <div class="case_inside"> <img src="302993.jpg"></div>
+        <div class="case_text"><p>不知道是什么草</p></div>
+    </div>
+    <div class="case" id="case1-3" onmouseover="change()" onmouseout="cancel()">
+        <div class="case_inside"> <img src="302993.jpg"></div>
+        <div class="case_text"><p>好烦啊</p></div>
+    </div>
+    <div class="case" id="case1-4" onmouseover="change()" onmouseout="cancel()">
+        <div class="case_inside"> <img src="302993.jpg"></div>
+        <div class="case_text"><p>二手男朋友</p></div>
+    </div>
+</div>
+<div class="insert">
     <a href="#" style="font-size: larger; float: right;margin-top: 5px;color:black">更多》</a>
 </div>
 <div class="middle">
     <div class="case-top"></div>
 
-    <div class="case"></div>
-    <div class="case"></div>
-    <div class="case"></div>
-    <div class="case"></div>
+    <div class="case" id="case2-1" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case2-2" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case2-3" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case2-4" onmouseover="change()" onmouseout="cancel()"></div>
+</div>
+<div class="insert">
+    <a href="#" style="font-size: larger; float: right;margin-top: 5px;color:black">更多》</a>
+</div>
+<div class="middle">
+    <div class="case-top"></div>
+
+    <div class="case" id="case3-1" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case3-2" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case3-3" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case3-4" onmouseover="change()" onmouseout="cancel()"></div>
+</div>
+<div class="insert">
+    <a href="#" style="font-size: larger; float: right;margin-top: 5px;color:black">更多》</a>
+</div>
+<div class="middle">
+    <div class="case-top"></div>
+
+    <div class="case" id="case4-1" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case4-2" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case4-3" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case4-4" onmouseover="change()" onmouseout="cancel()"></div>
+</div>
+<div class="insert">
+    <a href="#" style="font-size: larger; float: right;margin-top: 5px;color:black">更多》</a>
+</div>
+<div class="middle">
+    <div class="case-top"></div>
+
+    <div class="case" id="case5-1" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case5-2" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case5-3" onmouseover="change()" onmouseout="cancel()"></div>
+    <div class="case" id="case5-4" onmouseover="change()" onmouseout="cancel()"></div>
 </div>
 </body>
 </html>
