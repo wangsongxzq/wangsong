@@ -63,7 +63,7 @@ span{
 .insert{
     width: 1353px;
     height:30px;
-    background-color: beige;
+
 }
 .middle{
     width: 1353px;
@@ -102,11 +102,14 @@ span{
     margin-top: 3%;
     margin-left: 4%;
 }
-img{
+.img1{
     margin-top: 2%;
     margin-left: 2%;
     height: 96%;
     width: 96%;
+}
+.img-1{
+
 }
 p{
     text-align: center;
