@@ -7,21 +7,45 @@
 <head>
     <meta charset="UTF-8">
     <title>发布</title>
-    <script>
-        function check() {
-            var Obj = document.getElementsByName("R");
-            for(i=0;i<1;i++)
-            {
-                if(Obj[i].checked){
-                    break;
+    <script type="jscript">
+        function xmTanUploadImg(obj) {
+
+            var fl=obj.files.length;
+            for(var i=0;i<fl;i++){
+                var file=obj.files[i];
+                var reader = new FileReader();
+
+                //读取文件过程方法
+
+                reader.onloadstart = function (e) {
+                    console.log("开始读取....");
                 }
+                reader.onprogress = function (e) {
+                    console.log("正在读取中....");
+                }
+                reader.onabort = function (e) {
+                    console.log("中断读取....");
+                }
+                reader.onerror = function (e) {
+                    console.log("读取异常....");
+                }
+                reader.onload = function (e) {
+                    console.log("成功读取....");
+
+                    var imgstr='<img style="width:100px;height:100px;" src="'+e.target.result+'"/>';
+                    var oimgbox=document.getElementById("imgboxid");
+                    var ndiv=document.createElement("div");
+
+                    ndiv.innerHTML=imgstr;
+                    ndiv.className="img-div";
+                    oimgbox.appendChild(ndiv);
+
+                }
+
+                reader.readAsDataURL(file);
+//alert(1);
             }
-            if(i==Obj.length){
-                alert("没有选择！")
-            }
-            else{
-                alert(Obj[i].value)
-            }
+
         }
     </script>
 </head>
@@ -114,12 +138,14 @@
             <input type="radio" name="R" id="G5" value="10">其&nbsp&nbsp&nbsp&nbsp他
         </label>
     </div>
-    <div style="display:block">
-    <br><br><span style="font-family: 宋体; color: black;font-size: large">请添加事件/物品描述</span><br><br>
-    <textarea class="col-md-6" rows="3" style="display:inherit" ></textarea>
+    <div style="display:block;">
+    <br><span style="font-family: 宋体; color: black;font-size: large">请添加事件/物品描述</span><br><br>
+    <textarea class="col-md-6" rows="3" style="display:inherit" ></textarea><br><br><br>
     </div>
-    <br><br><span style="font-family: 宋体; color: black;font-size: large">请标示事件/物品价格</span><br><br>
-    <input type="number"><span class="glyphicon glyphicon-yen" style="color: gold;"></span>
+    <br><span style="font-family: 宋体; color: black;font-size: large">请标示事件/物品价格</span><br><br>
+    <input type="number"><span class="glyphicon glyphicon-yen" style="color: gold;font-size:large"></span>
+    <br><br><span style="font-family: 宋体; color: black;font-size: large">请选择要上传的图片</span><br><br>
+    <input type="file" id="file_input" multiple/>
 </div>
 </body>
 </html>

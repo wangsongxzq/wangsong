@@ -61,3 +61,11 @@ a{
     margin-top: 50px;
     margin-left: 450px;
 }
+.img-div{
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    float: left;
+    line-height: 1;
+    margin-left: 5px;
+    overflow: hidden;
+}
