@@ -53,35 +53,11 @@
 span{
     font-size: xx-large;
 }
+a{
+    color: white;
+    font-size: larger;
+}
 .middle{
-    margin-top: 0px;
-    height:450px;
-    width:1333px;
-    background-color:white;
+    margin-top: 50px;
+    margin-left: 450px;
 }
-#middle_top{
-    margin-top: 20px;
-    height:200px;
-    width:700px;
-    text-align: center;
-    margin-left: 300px;
-    rules:all;
-
-}
-#middle_bottom{
-    margin-top: 20px;
-    height:200px;
-    width:700px;
-    text-align: center;
-    margin-left: 300px;
-    rules:all;
-}
-#bottom{
-    height:20px;
-    width:1333px;
-    background-color: greenyellow;
-}
-table{
-
-}
-

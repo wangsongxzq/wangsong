@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>事件</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="发布.css">
+<head>
+    <meta charset="UTF-8">
+    <title>发布</title>
+    <script>
+        function check() {
+            var Obj = document.getElementsByName("R");
+            for(i=0;i<1;i++)
+            {
+                if(Obj[i].checked){
+                    break;
+                }
+            }
+            if(i==Obj.length){
+                alert("没有选择！")
+            }
+            else{
+                alert(Obj[i].value)
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="top">
+    <div class="container-fluid" align="right">
+        <a href="../登录/登录测试.html" style="color: black;">登录</a>
+        <a href="../注册/注册测试.jpg" style="color: black">注册</a>
+
+    </div>
+</div>
+    <div id="head">
+    <div id="head_left">
+        <img src="../img/305713.jpg" id="head_img">
+    </div>
+    <div id="head_right">
+        <ul>
+            <li><a>首页</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
+            <li><a>二手</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
+            <li><a>事件</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
+            <li><a>个人中心</a><span style="color:gainsboro">|</span></li>
+        </ul>
+        <input   id="search">
+        <button type="button" id="search_button">搜&nbsp&nbsp索</button>
+    </div>
+</div>
+<div class="middle">
+    <span style="font-family: 宋体; color: black;font-size: large">请选择发布类型</span><br><br>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="optionsRadios2" value="1">
+            我要发布事件
+        </label>
+    </div>
+    <div class="radio-inline" >
+        <label>
+            <input type="radio" name="R" id="optionsRadios3" value="2">
+            我要发布物品
+        </label>
+    </div>
+    <br><br><span style="font-family: 宋体; color: black;font-size: large">请选择发布事件/物品分类</span><br><br>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="E1" value="1">代&nbsp&nbsp&nbsp&nbsp课
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="E2" value="2">取快递
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="E3" value="3">买&nbsp&nbsp&nbsp&nbsp饭
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="E4" value="4">买水果
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="E5" value="5">其&nbsp&nbsp&nbsp&nbsp他
+        </label>
+    </div>
+   <br>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="G1" value="6">服&nbsp&nbsp&nbsp&nbsp饰
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="G2" value="7">书&nbsp&nbsp&nbsp&nbsp籍
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="G3" value="8">美&nbsp&nbsp&nbsp&nbsp妆
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="G4" value="9">数&nbsp&nbsp&nbsp&nbsp码
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label >
+            <input type="radio" name="R" id="G5" value="10">其&nbsp&nbsp&nbsp&nbsp他
+        </label>
+    </div>
+    <div style="display:block">
+    <br><br><span style="font-family: 宋体; color: black;font-size: large">请添加事件/物品描述</span><br><br>
+    <textarea class="col-md-6" rows="3" style="display:inherit" ></textarea>
+    </div>
+    <br><br><span style="font-family: 宋体; color: black;font-size: large">请标示事件/物品价格</span><br><br>
+    <input type="number"><span class="glyphicon glyphicon-yen" style="color: gold;"></span>
+</div>
+</body>
+</html>

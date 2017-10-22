@@ -78,11 +78,15 @@
     var passwordRegex=/^[a-zA-Z]\w{7}$/;
     var telRegex=/^\d{11}$/;
     var emailRegex = /^\w+@\w+(\.\w+)+$/;
-
+    var informartion="abc";
     function ById(id){  //自定义方法，用于获取传递过来的ID值对应的节点对象
         return document.getElementById(id);
     }
-
+    function check() {
+        if(informartion){
+            ById("worn").style.display="inline";
+        }
+    }
     function validateForm() {   //提交检测
         var flag=true;
         //验证用户名
@@ -195,7 +199,7 @@
 <div class="main">
     <div id="head">
         <div id="head_left">
-            <img id="head_img" src="305713.jpg" >
+            <img id="head_img" src="../img/305713.jpg" >
         </div>
         <div id="head_right">
             <span style="margin-left: 70px; margin-top: 40px; text-align: inherit; font-family: 宋体;color: white;font-size: xx-large"> 欢迎注册</span>
@@ -205,6 +209,7 @@
     <div id="body">
     <form name="form1" method="post" onsubmit="return validateForm()"  action="">
         <br><br>
+        <span id="warn" style="display: none">用户名已经存在</span>
     <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)" >
        <span class="glyphicon glyphicon-ok" id="img1"></span><span id="span_username">用户名为四个汉字</span><br><br>
 

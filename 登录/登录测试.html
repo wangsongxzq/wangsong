@@ -9,7 +9,7 @@
          .all{
              width:1353px;
              height: 574px;
-             background-image: url("302993.jpg");
+             background-image: url("../事件/302993.jpg");
          }
         .left{
             width: 770px;
@@ -33,13 +33,15 @@
         }
     </style>
     <script>
-        function validate_name(form) {
-
-            if( form.username.value==null||form.password.value==" ") {
+        var information="xuezhiqian";
+        function validate_name(input) {
+            var usernameNode=document.getElementById("username");
+            var username=usernameNode.value;
+            if( username==null||username==" ") {
                 alert("用户名不能为空");
                 return false;
             }
-            if(form.username.value.length!=4)
+            if(username.length!=4)
             {
                 alert("用户名格式不正确");
                 return false;
@@ -51,9 +53,9 @@
                 return false;
             }
         }
-        function check(form) {
-            if({{information}})
-                alert("输入的用户名或密码不正确");
+        function check() {
+            if(information)
+                alert("出错啦");
         }
     </script>
 </head>
@@ -65,7 +67,7 @@
 <div class="right">
     <div class="right_top"></div>
     <div class="right_bottom">
-        <form onsubmit="validate_name(this),validate_password(this)" method="post" action="">
+        <form onsubmit="check()" method="post" action="">
             <div class="col-xs-6" style="float: inherit">
                 <input class="form-control" type="text" maxlength="4" name="username" placeholder="用户名">
             </div><br>

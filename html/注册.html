@@ -1,120 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="../事件/事件.css">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="事件.css">
+    <title></title>
     <style type="text/css">
-        .main{
-            height:350px;
-            width: 800px;
-            margin-top: 40px;
-            margin-left: 270px;
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
 
-        }
-        .main-left{
-            height: 100%;
-            width: 60%;
-
-            float: left;
-        }
-        .main-right{
-            height: 100%;
-            width: 40%;
-            float: left;
-
-        }
-        .main-right-top{
-            height: 15%;
-            width: 100%;
-            float: inherit;
-            border: 1px solid #CCC;
-        }
-        .main-right-middle{
-            height: 60%;
-            width: 100%;
-            float: inherit;
-            border: 1px solid #CCC;
-            margin-top: -1px;
-        }
-        .main-right-bottom{
-            height: 25%;
-            width: 100%;
-            float: inherit;
-            border: 1px solid #CCC;
-            margin-top: -1px;
+        body {
+            padding: 20px;
         }
 
         #container {
-            position: relative;
             width: 480px;
             height: 350px;
-            border: 1px solid #CCCCCC;
+            border: 3px solid #333;
             overflow: hidden;
+            position: relative;
         }
+
         #list {
-            position: absolute;
-            z-index: 1;
             width: 4200px;
             height: 400px;
+            position: absolute;
+            z-index: 1;
         }
+
         #list img {
-            float: left;
             width: 600px;
             height: 400px;
+            float: left;
         }
+
         #buttons {
             position: absolute;
-            left: 200px;
-            bottom: 20px;
-            z-index: 2;
             height: 10px;
             width: 100px;
+            z-index: 2;
+            bottom: 20px;
+            left: 200px;
         }
+
         #buttons span {
+            cursor: pointer;
             float: left;
-            margin-right: 5px;
+            border: 1px solid #fff;
             width: 10px;
             height: 10px;
-            border: 1px solid #fff;
             border-radius: 50%;
             background: #333;
-            cursor: pointer;
+            margin-right: 5px;
         }
+
         #buttons .on {
             background: orangered;
         }
+
         .arrow {
-            position: absolute;
-            top: 150px;
-            z-index: 2;
+            cursor: pointer;
             display: none;
-            width: 40px;
-            height: 40px;
-            font-size: 36px;
-            font-weight: bold;
             line-height: 39px;
             text-align: center;
-            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
             background-color: RGBA(0, 0, 0, .3);
-            cursor: pointer;
+            color: #fff;
         }
+
         .arrow:hover {
             background-color: RGBA(0, 0, 0, .7);
         }
+
         #container:hover .arrow {
             display: block;
         }
+
         #prev {
             left: 20px;
         }
+
         #next {
             right: 20px;
         }
     </style>
-    <script>
+    <script type="text/javascript">
+        /* 知识点：        */
+        /*       this用法 */
+        /*       DOM事件 */
+        /*       定时器 */
         window.onload = function() {
             var container = document.getElementById('container');
             var list = document.getElementById('list');
@@ -195,59 +179,28 @@
 </head>
 
 <body>
-    <div class="top">
-    <div class="container-fluid" align="right">
-        <a href="登录测试.html" style="color: black;">登录</a>
-        <a href="注册测试.html" style="color: black">注册</a>
 
+<div id="container">
+    <div id="list" style="left: -600px;">
+        <img src="../事件/302993.jpg" alt="1" />
+        <img src="img/303359.jpg" alt="1" />
+        <img src="../事件/302993.jpg" alt="2" />
+        <img src="img/303359.jpg" alt="3" />
+        <img src="../事件/302993.jpg" alt="4" />
+        <img src="img/303359.jpg" alt="5" />
+        <img src="../事件/302993.jpg" alt="5" />
     </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
 </div>
-    <div id="head">
-    <div id="head_left">
-        <img src="305713.jpg" id="head_img">
-    </div>
-    <div id="head_right">
-        <ul>
-            <li><a>首页</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
-            <li><a>二手</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
-            <li><a>事件</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>|</span></li>
-            <li><a>个人中心</a><span style="color:gainsboro">|</span></li>
-        </ul>
-        <input   id="search">
-        <button type="button" id="search_button">搜&nbsp&nbsp索</button>
-    </div>
-</div>
-    <div class="main">
-        <div class="main-left">
-            <div id="container">
-                <div id="list" style="left: -600px;">
-                    <img src="302993.jpg" alt="1" />
-                    <img src="303359.jpg" alt="1" />
-                    <img src="302993.jpg" alt="2" />
-                    <img src="303359.jpg" alt="3" />
-                    <img src="302993.jpg" alt="4" />
-                    <img src="303359.jpg" alt="5" />
-                    <img src="302993.jpg" alt="5" />
-                </div>
-                <div id="buttons">
-                    <span index="1" class="on"></span>
-                    <span index="2"></span>
-                    <span index="3"></span>
-                    <span index="4"></span>
-                    <span index="5"></span>
-                </div>
-                <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-                <a href="javascript:;" id="next" class="arrow">&gt;</a>
-            </div>
-        </div>
-        <div class="main-right">
-            <div class="main-right-top"><p>一个淘气包</p></div>
-            <div class="main-right-middle"><p>卖傻逼一个</p></div>
-            <div class="main-right-bottom">
-                <span class="glyphicon glyphicon-yen" style="color: gold;  margin-left: 80px; margin-top: 20px"></span>
-                <span style="margin-left: 10px" >1314</span>
-            </div>
-        </div>
-    </div>
+
 </body>
+
 </html>
