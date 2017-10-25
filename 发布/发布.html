@@ -8,44 +8,46 @@
     <meta charset="UTF-8">
     <title>发布</title>
     <script type="jscript">
-        function xmTanUploadImg(obj) {
+        window.onload = function() {
+            var input = document.getElementById("file_input");
+            var result, div;
 
-            var fl=obj.files.length;
-            for(var i=0;i<fl;i++){
-                var file=obj.files[i];
-                var reader = new FileReader();
-
-                //读取文件过程方法
-
-                reader.onloadstart = function (e) {
-                    console.log("开始读取....");
+            if (typeof FileReader === 'undefined') {
+                result.innerHTML = "抱歉，你的浏览器不支持 FileReader";
+                input.setAttribute('disabled', 'disabled');
+            } else {
+                input.addEventListener('change', readFile, false);
+            }　　　　　//handler
+            function readFile() {
+                for (var i = 0; i < this.files.length; i++) {
+                    if (!input['value'].match(/.jpg|.gif|.png|.bmp/i)) {　　//判断上传文件格式
+                        return alert("上传的图片格式不正确，请重新选择")
+                    }
+                    var reader = new FileReader();
+                    reader.readAsDataURL(this.files[i]);
+                    reader.onload = function (e) {
+                        result = '<div id="result"><img src="' + this.result + '" alt=""/></div>';
+                        div = document.createElement('div');
+                        div.innerHTML = result;
+                        document.getElementById('body').appendChild(div);  　　//插入dom树                      <br>　　　　　　　　　　}
+                    }
                 }
-                reader.onprogress = function (e) {
-                    console.log("正在读取中....");
-                }
-                reader.onabort = function (e) {
-                    console.log("中断读取....");
-                }
-                reader.onerror = function (e) {
-                    console.log("读取异常....");
-                }
-                reader.onload = function (e) {
-                    console.log("成功读取....");
-
-                    var imgstr='<img style="width:100px;height:100px;" src="'+e.target.result+'"/>';
-                    var oimgbox=document.getElementById("imgboxid");
-                    var ndiv=document.createElement("div");
-
-                    ndiv.innerHTML=imgstr;
-                    ndiv.className="img-div";
-                    oimgbox.appendChild(ndiv);
-
-                }
-
-                reader.readAsDataURL(file);
-//alert(1);
             }
-
+        }
+        function readFile(){
+            var fd = new FormData();
+            for(var i=0;i<this.files.length;i++){
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[i]);
+                fd.append(i,this.files[i]);　　　　　　　　　 }
+            $.ajax({
+                url : '',
+                type : 'post',
+                data : fd,
+                success : function(data){
+                    console.log(data)
+                }
+            })
         }
     </script>
 </head>
@@ -73,79 +75,122 @@
     </div>
 </div>
 <div class="middle">
-    <span style="font-family: 宋体; color: black;font-size: large">请选择发布类型</span><br><br>
-    <div class="radio-inline">
+    <span style=" color: black;font-size: large">请选择您的国家&nbsp&nbsp&nbsp&nbsp</span>
+    <select name="country">
+        <option>中国</option>
+        <option>美国</option>
+        <option>泰国</option>
+        <option>韩国</option>
+        <option>日本</option>
+    </select><br><br>
+    <span style=" color: black;font-size: large">请选择您的省份&nbsp&nbsp&nbsp&nbsp</span>
+    <select name="country">
+        <option>辽宁</option>
+        <option>广东</option>
+        <option>河北</option>
+
+    </select><br><br>
+    <span style=" color: black;font-size: large">请选择您的城市&nbsp&nbsp&nbsp&nbsp</span>
+    <select name="country">
+        <option>北京</option>
+        <option>沈阳</option>
+        <option>上海</option>
+        <option>杭州</option>
+        <option>深圳</option>
+    </select><br>
+    <br><span style="  color: black;font-size: large">请填写具体地点</span><br><br>
+    <textarea class="col-md-6" rows="2" style="display:inherit" ></textarea><br><br><br>
+    <span style=" color: black;font-size: large">请选择发布类型</span><br><br>
+        <div style="border: 1px solid #CCCCCC; padding: 10px 5px 5px 60px;margin-right: 450px">
+              <div class="radio-inline">
         <label >
-            <input type="radio" name="R" id="optionsRadios2" value="1">
+            <input type="radio" name="R0" id="optionsRadios2" value="1">
             我要发布事件
         </label>
-    </div>
-    <div class="radio-inline" >
+              </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <div class="radio-inline" >
         <label>
-            <input type="radio" name="R" id="optionsRadios3" value="2">
+            <input type="radio" name="R0" id="optionsRadios3" value="2">
             我要发布物品
         </label>
     </div>
-    <br><br><span style="font-family: 宋体; color: black;font-size: large">请选择发布事件/物品分类</span><br><br>
-    <div class="radio-inline">
+        </div>
+    <br><span style=" color: black;font-size: large">请选择发布事件/物品分类</span><br><br>
+    <div style="border: 1px solid #CCCCCC; padding: 10px 5px 5px 29px;margin-right: 450px">
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="E1" value="1">代&nbsp&nbsp&nbsp&nbsp课
         </label>
     </div>
-    <div class="radio-inline">
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="E2" value="2">取快递
         </label>
     </div>
-    <div class="radio-inline">
+            <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="E3" value="3">买&nbsp&nbsp&nbsp&nbsp饭
         </label>
     </div>
-    <div class="radio-inline">
+            <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="E4" value="4">买水果
         </label>
     </div>
-    <div class="radio-inline">
+            <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="E5" value="5">其&nbsp&nbsp&nbsp&nbsp他
         </label>
     </div>
-   <br>
-    <div class="radio-inline">
+            <br>
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="G1" value="6">服&nbsp&nbsp&nbsp&nbsp饰
         </label>
     </div>
-    <div class="radio-inline">
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="G2" value="7">书&nbsp&nbsp&nbsp&nbsp籍
         </label>
     </div>
-    <div class="radio-inline">
+            <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="G3" value="8">美&nbsp&nbsp&nbsp&nbsp妆
         </label>
     </div>
-    <div class="radio-inline">
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="G4" value="9">数&nbsp&nbsp&nbsp&nbsp码
         </label>
     </div>
-    <div class="radio-inline">
+             <div class="radio-inline">
         <label >
             <input type="radio" name="R" id="G5" value="10">其&nbsp&nbsp&nbsp&nbsp他
         </label>
     </div>
+    </div>
     <div style="display:block;">
-    <br><span style="font-family: 宋体; color: black;font-size: large">请添加事件/物品描述</span><br><br>
+    <br><span style="  color: black;font-size: large">请添加事件/物品描述</span><br><br>
     <textarea class="col-md-6" rows="3" style="display:inherit" ></textarea><br><br><br>
     </div>
-    <br><span style="font-family: 宋体; color: black;font-size: large">请标示事件/物品价格</span><br><br>
-    <input type="number"><span class="glyphicon glyphicon-yen" style="color: gold;font-size:large"></span>
+    <br><span style=" color: black;font-size: large">请标示事件/物品价格</span><br><br>
+    <input maxlength="4" onkeyup="
+         if(this.value.length==1)
+            {this.value=this.value.replace(/[^1-9]/g,'')}
+         else{this.value=this.value.replace(/\D/g,'')}"
+            onafterpaste="
+            if(this.value.length==1)
+                {this.value=this.value.replace(/[^1-9]/g,'')}
+            else{this.value=this.value.replace(/\D/g,'')}">
+    <span class="glyphicon glyphicon-yen" style="color: gold;font-size:large" ></span>
     <br><br><span style="font-family: 宋体; color: black;font-size: large">请选择要上传的图片</span><br><br>
-    <input type="file" id="file_input" multiple/>
+    <div class="container">
+        <input type="file" multiple >
+    </div>
+    <br><br>
+    <div class="col-md-4 col-md-offset-4" style=" margin-left: 300px">
+        <input class="btn btn-primary" style="width: 120px;" type="submit" value="发布" >
+    </div>
 </div>
 </body>
 </html>
