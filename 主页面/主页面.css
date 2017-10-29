@@ -53,10 +53,12 @@
 span{
     font-size: xx-large;
 }
-a{
+ul li a{
     color: white;
     font-size: larger;
 }
+a { text-decoration: none; }
+a:hover{ text-decoration: none; }
 .middle{
     margin-top: 0px;
     height:450px;
@@ -64,21 +66,23 @@ a{
     background-color:white;
 }
 #middle_top{
-    margin-top: 20px;
+
+    margin-top: 40px;
     height:200px;
-    width:700px;
+    width:150px;
     text-align: center;
-    margin-left: 300px;
-    rules:all;
+    margin-left: 10px;
+
 
 }
 #middle_bottom{
+
     margin-top: 20px;
     height:200px;
-    width:700px;
+    width:150px;
     text-align: center;
-    margin-left: 300px;
-    rules:all;
+
+    margin-left: 10px;
 }
 #bottom{
     height:20px;
