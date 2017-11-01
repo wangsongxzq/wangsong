@@ -1,7 +1,13 @@
-a{
+ul li a{
     color: white;
     font-size: larger;
+    text-decoration: none;
 }
+ul li a:hover{
+    text-decoration: none;
+}
+a { text-decoration: none; }
+a:hover{ text-decoration: none; }
 .top{
     height:25px;
     width:1353px;

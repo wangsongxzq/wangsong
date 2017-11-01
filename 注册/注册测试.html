@@ -4,9 +4,12 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
+    <META  NAME="save"  CONTENT="history">
     <title>注册</title>
     <style>
-       #head{
+        .saveHistory  {behavior:url(#default#savehistory);}
+
+        #head{
            height: 100px;
            width:1353px;
            float: inherit;
@@ -207,14 +210,14 @@
     </div>
     <div id="body-top"></div>
     <div id="body">
-    <form name="form1" method="post" onsubmit="return validateForm()"  action="">
+    <form name="form1" method="post" onsubmit="return validateForm()"  action="主页面1.html">
         <br><br>
         <span id="warn" style="display: none">用户名已经存在</span>
     <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)" >
-       <span class="glyphicon glyphicon-ok" id="img1"></span><span id="span_username">用户名为四个汉字</span><br><br>
+       <span class="glyphicon glyphicon-ok" id="img1"></span><span id="span_username">至少为四个字符</span><br><br>
 
     <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">
-        <span class="glyphicon glyphicon-ok" id="img2"></span><span  id="span_password">密码由数字或英文字母组成长度为8</span><br><br>
+        <span class="glyphicon glyphicon-ok" id="img2"></span><span  id="span_password">英文字母开头长度为8</span><br><br>
 
     <span>确认密码&nbsp&nbsp</span><input type="password" maxlength="8" name="pd"  id="pd" onblur="check_pd(this)">
         <span class="glyphicon glyphicon-ok"  id="img3"></span><span id="span_pd">请输入与上次相同的密码</span><br><br>
@@ -225,7 +228,7 @@
     <span>邮&nbsp&nbsp箱&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="email" name="email" id="email" onblur="check_email(this)">
         <span class="glyphicon glyphicon-ok"  id="img5"></span><span id="span_email">请输入正确邮箱格式</span><br><br>
 
-        <input class="btn btn-primary" style="width: 70px; margin-left: 110px" type="submit" value="注册" >
+        <input class="btn btn-primary" style="width: 70px; margin-left: 110px" type="submit" value="注册" onclick=" {location.href='主页面1.html'}">
     </form>
 </div>
 </div>

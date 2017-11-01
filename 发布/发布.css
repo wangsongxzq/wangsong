@@ -1,6 +1,12 @@
 .top{
     height: 20px;
 }
+a{
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+a:hover{ text-decoration: none; }
 #head{
     width:13353px;
     height:100px;
@@ -53,10 +59,7 @@
 span{
     font-size: xx-large;
 }
-a{
-    color: white;
-    font-size: larger;
-}
+
 .middle{
     margin-top: 50px;
     margin-left: 450px;
