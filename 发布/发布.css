@@ -1,12 +1,24 @@
 .top{
     height: 20px;
 }
-a{
+ul li a{
     color: white;
     font-size: larger;
-    text-decoration: none;
+    padding-top: 37px;
+    padding-bottom: 39px;
+    padding-left: 55px;
+    padding-right:55px;
 }
-a:hover{ text-decoration: none; }
+a { text-decoration: none; }
+ul li a:hover{
+    color:white;
+    text-decoration: none;
+    background-color: darksalmon;
+}
+a:hover{
+    text-decoration: none;
+    color: blue;
+}
 #head{
     width:13353px;
     height:100px;
@@ -36,7 +48,7 @@ a:hover{ text-decoration: none; }
     float: left;
     height :30px;
     width:150px;
-    margin-top: 27px;
+    margin-top: 35px;
     text-align: center;
     font-size: larger;
     color: white;
