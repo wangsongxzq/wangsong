@@ -10,7 +10,7 @@
     width:267px;
     height:100px;
     float: left;
-    background-color:gainsboro;
+    background-color: gainsboro;
 }
 #head_img{
     margin-top: 1px;
@@ -30,7 +30,7 @@
     float: left;
     height :30px;
     width:150px;
-    margin-top: 27px;
+    margin-top: 35px;
     text-align: center;
     font-size: larger;
     color: white;
@@ -56,9 +56,21 @@ span{
 ul li a{
     color: white;
     font-size: larger;
+    padding-top: 37px;
+    padding-bottom: 39px;
+    padding-left: 55px;
+    padding-right:55px;
 }
 a { text-decoration: none; }
-a:hover{ text-decoration: none; }
+ul li a:hover{
+    color:white;
+    text-decoration: none;
+    background-color: darksalmon;
+}
+a:hover{
+    text-decoration: none;
+    color: blue;
+}
 .middle{
     margin-top: 0px;
     height:450px;

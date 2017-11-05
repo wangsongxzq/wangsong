@@ -2,12 +2,19 @@ ul li a{
     color: white;
     font-size: larger;
     text-decoration: none;
+    padding-top: 37px;
+    padding-bottom: 39px;
+    padding-left: 55px;
+    padding-right:55px;
 }
 ul li a:hover{
+    color:white;
     text-decoration: none;
+    background-color: darksalmon;
 }
 a { text-decoration: none; }
-a:hover{ text-decoration: none; }
+a:hover{ text-decoration: none;
+color: blue;}
 .top{
     height:25px;
     width:1353px;
@@ -17,7 +24,7 @@ a:hover{ text-decoration: none; }
 #head{
     width:1353px;
     height:100px;
-    background-color: gainsboro;
+    background-color:gainsboro ;
 }
 #head_left{
     width:267px;
@@ -43,7 +50,7 @@ a:hover{ text-decoration: none; }
     float: left;
     height :30px;
     width:150px;
-    margin-top: 27px;
+    margin-top: 35px;
     text-align: center;
     font-size: larger;
     color: white;
