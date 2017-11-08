@@ -7,7 +7,6 @@
     <META  NAME="save"  CONTENT="history">
     <title>注册</title>
     <style>
-        .saveHistory  {behavior:url(#default#savehistory);}
 
         #head{
            height: 100px;
@@ -17,7 +16,7 @@
        .main{
            width:1353px;
            height: 574px;
-           background-image: url("注册测试.jpg");
+           background-image: url("背景.jpg");
 
        }
 
@@ -50,30 +49,30 @@
             margin-left: 400px;
 
             float:inherit;
-            background-color: white;
+
             border-radius: 15px;
             border: 1px solid #CCC;
         }
        #img1{
            color:white ;
-           display: inline;
+           display: none;
        }
 
        #img2{
            color:white ;
-           display: inline;
+           display: none ;
        }
        #img3{
            color:white ;
-           display: inline;
+           display: none ;
        }
        #img4{
            color:white ;
-           display: inline;
+           display: none ;
        }
        #img5{
            color:white ;
-           display: inline;
+           display: none ;
        }
     </style>
     <script>
@@ -139,6 +138,7 @@
             ById("span_username").style.color = "red"; //不符合，相应内容变成红色
         }else{
             ById("span_username").style.display = "none";//符合，相应内容变成绿色
+            ById("img1").style.display="inline";
             ById("img1").style.color="green";
         }
     }
@@ -152,6 +152,7 @@
         }
         else {
             ById("span_password").style.display = "none";
+            ById("img2").style.display="inline";
             ById("img2").style.color="green";
         }
     }
@@ -169,6 +170,7 @@
             ById("span_pd").style.color = "red";
         }else{
             ById("span_pd").style.display = "none";
+            ById("img3").style.display="inline";
             ById("img3").style.color = "green";
         }
     }
@@ -181,6 +183,7 @@
         }
         else {
             ById("span_tel").style.display = "none";
+            ById("img4").style.display="inline";
             ById("img4").style.color="green";
         }
     }
@@ -192,6 +195,7 @@
             ById("span_email").style.color = "red";
         }else{
             ById("span_email").style.display = "none";
+            ById("img5").style.display="inline";
             ById("img5").style.color = "green";
         }
     }
@@ -213,19 +217,19 @@
     <form name="form1" method="post" onsubmit="return validateForm()"  action="主页面1.html">
         <br><br>
         <span id="warn" style="display: none">用户名已经存在</span>
-    <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)" >
-       <span class="glyphicon glyphicon-ok" id="img1"></span><span id="span_username">至少为四个字符</span><br><br>
+    <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)" >&nbsp&nbsp&nbsp&nbsp
+       <span class="glyphicon glyphicon-ok" id="img1" style="display: none"></span><span id="span_username">至少为四个字符</span><br><br>
 
-    <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">
+    <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">&nbsp&nbsp&nbsp&nbsp
         <span class="glyphicon glyphicon-ok" id="img2"></span><span  id="span_password">英文字母开头长度为8</span><br><br>
 
-    <span>确认密码&nbsp&nbsp</span><input type="password" maxlength="8" name="pd"  id="pd" onblur="check_pd(this)">
+    <span>确认密码&nbsp&nbsp</span><input type="password" maxlength="8" name="pd"  id="pd" onblur="check_pd(this)">&nbsp&nbsp&nbsp&nbsp
         <span class="glyphicon glyphicon-ok"  id="img3"></span><span id="span_pd">请输入与上次相同的密码</span><br><br>
 
-    <span>电&nbsp&nbsp话&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="text"   maxlength="11" name="tel" id="tel" onblur="check_tel(this)">
+    <span>电&nbsp&nbsp话&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="text"   maxlength="11" name="tel" id="tel" onblur="check_tel(this)">&nbsp&nbsp&nbsp&nbsp
         <span class="glyphicon glyphicon-ok"  id="img4"></span><span id="span_tel">请输入手机号码</span><br><br>
 
-    <span>邮&nbsp&nbsp箱&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="email" name="email" id="email" onblur="check_email(this)">
+    <span>邮&nbsp&nbsp箱&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="email" name="email" id="email" onblur="check_email(this)">&nbsp&nbsp&nbsp&nbsp
         <span class="glyphicon glyphicon-ok"  id="img5"></span><span id="span_email">请输入正确邮箱格式</span><br><br>
 
         <input class="btn btn-primary" style="width: 70px; margin-left: 110px" type="submit" value="注册" onclick=" {location.href='主页面1.html'}">

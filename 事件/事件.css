@@ -13,8 +13,10 @@ ul li a:hover{
     background-color: darksalmon;
 }
 a { text-decoration: none; }
-a:hover{ text-decoration: none;
-color: blue;}
+a:hover{
+    text-decoration: none;
+    color: blue;
+}
 .top{
     height:25px;
     width:1353px;
