@@ -4,36 +4,39 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>登录测试</title>
     <style type="text/css">
-         .all{
-             width:1353px;
-             height: 574px;
-             background-image: url("登录背景.png");
+        .main{
+                  width:100%;
+                  height: 100%;
+                  background-size:cover;
+                  
+
+              }
+              .bg-img{
+                  position: absolute;
+                  z-index: -1;
+                  width: 100%;
+                  height: 100%; 
+              }
+         .hhh{
+             position: absolute;
+             margin-left: 50%;
+             margin-top: 13%;
+             z-index: 1;
+             height: 250px;
+             width: 350px;
 
          }
-        .left{
-            width: 770px;
-            float: left;
+        .inside-top{
+            position: absolute;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
 
-            height:500px;
-        }
-        .right{
-            width:563px;
-            float: left;
-            height: 500px;
-        }
-        .right_top{
-            width: 100%;
-            height: 200px;
-            float: inherit;
-        }
-        .right_bottom{
-
-            width: 100%;
-            height:100%;
-
-        }
     </style>
     <script>
         var information="xuezhiqian";
@@ -60,31 +63,30 @@
             if(information)
                 alert("出错啦");
         }
+        function show(){
+
+                if (document.getElementById("word").type = "password") {
+                    document.getElementById("word").type = "text";
+                    document.getElementById("eye").style.color = "green";
+                }
+               
+        }
     </script>
 </head>
 <body>
-
-<div class="all">
-
-<div class="left" style=""></div>
-<div class="right">
-    <div class="right_top"></div>
-    <div class="right_bottom">
-        <form onsubmit="check()" method="post" action="">
-            <div class="col-xs-6" style="float: inherit">
-                <input class="form-control" type="text" maxlength="4" name="username" placeholder="用户名">
-            </div><br>
-            <div class="col-xs-6" style="float: inherit">
-                <input class="form-control" type="password" maxlength="8" name="password" placeholder="密码">
-            </div><br>
-            <div class="col-xs-4" style=" margin-left: 60px">
-                <input class="btn btn-primary" style="width: 120px;" type="submit" value="登录" >
-            </div>
-        </form>
-    </div>
-
-
-</div>
+<div class="main">
+   <div class="bg-img"> <img src="登录背景.png" style="height: 100%;width: 100%;z-index: -6"></div>
+   
+   <div class="hhh">
+      <div class="inside-top">
+          <form onsubmit="check()" method="post" action="">
+              <input class="form-control" type="text" maxlength="4" name="username" placeholder="用户名">
+              <br>
+              <input class="form-control" type="password" maxlength="8" name="password" id="word" placeholder="密码" style="display: inline;float: left">
+              <input class="btn btn-primary" style="width: 120px;margin-top: 30px;margin-left: 60px" type="submit" value="登录" >
+          </form>
+      </div>
+   </div>
 </div>
 </body>
 </html>

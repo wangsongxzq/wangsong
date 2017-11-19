@@ -4,20 +4,30 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <META  NAME="save"  CONTENT="history">
     <title>注册</title>
     <style>
 
-        #head{
-           height: 100px;
-           width:1353px;
-           float: inherit;
-       }
-       .main{
-           width:1353px;
-           height: 574px;
-           background-image: url("背景.jpg");
 
+       .main{
+           width:100%;
+           height: 100%;
+           position: relative;
+           background-size:cover;
+
+
+       }
+       .bg-img{
+           position: absolute;
+           z-index: -1;
+           width: 100%;
+           height: 100%;
+       }
+       #head{
+           height: 15%;
+           width:100%;
+           float: inherit;
        }
 
        #head_left {
@@ -26,33 +36,32 @@
            float: left;
 
        }
-       #head_img {
-           width: 250px;
-           height: 100px;
-       }
         #head_right{
             padding-top:35px;
             height: 100px;
-            width: 986px;
+            width: 80%;
         }
         #body-top{
-            height: 50px;
-            width: 600px;
-            padding-left: 100px;
-            margin-left: 400px;
+            height: 10%;
+            width:100%;
+
             float: inherit;
         }
         #body{
-            height:333px;
-            width: 600px;
+            height:350px;
+            width: 590px;
             padding-left: 100px;
-            margin-left: 400px;
+            margin-left: 29%;
+            margin-top: 5%;
+            padding-bottom: 20px;
+            margin-bottom: 10%;
 
             float:inherit;
 
             border-radius: 15px;
-            border: 1px solid #CCC;
+            border: 1px solid darksalmon;;
         }
+
        #img1{
            color:white ;
            display: none;
@@ -204,9 +213,12 @@
 </head>
 <body>
 <div class="main">
+   <div class="bg-img"> <img src="背景.jpg" style="height: 100%;width: 100%;z-index: -6"></div>
+
     <div id="head">
         <div id="head_left">
-            <img id="head_img" src="../img/305713.jpg" >
+            <span class="glyphicon glyphicon-piggy-bank" style="font-size:90px; margin-left: 50px;margin-top: 5px;color: darksalmon"></span>
+            <span style="font-family: 华文新魏;font-size: 50px;margin-top: 0px;color: darksalmon">trade</span>
         </div>
         <div id="head_right">
             <span style="margin-left: 70px; margin-top: 40px; text-align: inherit; font-family: 宋体;color: white;font-size: xx-large"> 欢迎注册</span>
@@ -214,14 +226,19 @@
     </div>
     <div id="body-top"></div>
     <div id="body">
+
+
+
     <form name="form1" method="post" onsubmit="return validateForm()"  action="主页面1.html">
         <br><br>
         <span id="warn" style="display: none">用户名已经存在</span>
     <span>用&nbsp户&nbsp名&nbsp&nbsp&nbsp</span><input type="text" maxlength="20" name="username" id="username" onblur="check_username(this)" >&nbsp&nbsp&nbsp&nbsp
        <span class="glyphicon glyphicon-ok" id="img1" style="display: none"></span><span id="span_username">至少为四个字符</span><br><br>
 
-    <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">&nbsp&nbsp&nbsp&nbsp
-        <span class="glyphicon glyphicon-ok" id="img2"></span><span  id="span_password">英文字母开头长度为8</span><br><br>
+            <span>密&nbsp&nbsp码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><input type="password" maxlength="8" name="password" id="password" onblur="check_password(this)">&nbsp&nbsp&nbsp&nbsp
+            <span class="glyphicon glyphicon-ok" id="img2"></span><span  id="span_password">英文字母开头长度为8</span><br><br>
+
+
 
     <span>确认密码&nbsp&nbsp</span><input type="password" maxlength="8" name="pd"  id="pd" onblur="check_pd(this)">&nbsp&nbsp&nbsp&nbsp
         <span class="glyphicon glyphicon-ok"  id="img3"></span><span id="span_pd">请输入与上次相同的密码</span><br><br>
@@ -234,7 +251,12 @@
 
         <input class="btn btn-primary" style="width: 70px; margin-left: 110px" type="submit" value="注册" onclick=" {location.href='主页面1.html'}">
     </form>
-</div>
+
+
+
+    </div>
+
+
 </div>
 </body>
 </html>

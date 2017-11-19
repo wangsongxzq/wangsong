@@ -2,7 +2,7 @@
     height: 20px;
 }
 #head{
-    width:1353px;
+    width:13353px;
     height:100px;
     background-color: gainsboro;
 }
@@ -71,37 +71,3 @@ a:hover{
     text-decoration: none;
     color: blue;
 }
-.middle{
-    margin-top: 0px;
-    height:450px;
-    width:1333px;
-    background-color:white;
-}
-#middle_top{
-
-    margin-top: 40px;
-    height:200px;
-    width:150px;
-    text-align: center;
-    margin-left: 10px;
-
-
-}
-#middle_bottom{
-
-    margin-top: 20px;
-    height:200px;
-    width:150px;
-    text-align: center;
-
-    margin-left: 10px;
-}
-#bottom{
-    height:20px;
-    width:1333px;
-    background-color: greenyellow;
-}
-table{
-
-}
-
