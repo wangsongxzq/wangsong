@@ -1,3 +1,6 @@
+body{
+    min-width: 1353px;
+}
 ul li a{
     color: white;
     font-size: larger;
@@ -19,17 +22,17 @@ a:hover{
 }
 .top{
     height:25px;
-    width:1353px;
+    width:100%;
 }
 
 
 #head{
-    width:1353px;
+    width:100%;
     height:100px;
     background-color:gainsboro ;
 }
 #head_left{
-    width:267px;
+    width:20%;
     height:100px;
     float: left;
     background-color:gainsboro;
@@ -41,7 +44,7 @@ a:hover{
     height:99px;
 }
 #head_right{
-    width:1066px;
+    width:80%;
     float: left;
 }
 
