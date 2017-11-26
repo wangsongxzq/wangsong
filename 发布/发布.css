@@ -77,8 +77,9 @@ span{
 }
 
 .middle{
+    width: 100%;
     margin-top: 50px;
-    margin-left: 450px;
+    padding-left: 30%;
 }
 .img-div{
     border: 1px solid #ddd;
